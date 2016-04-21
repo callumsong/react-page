@@ -37,6 +37,11 @@ var allMovies = [
     }
 ];
 
+
+// Ideally these React classes should be on separate modular files however due to time constraints I have put them in the same file.
+// In an ideal situation I would create new files per React class and use libraries such as Gulp and Grunt to compile the code together
+// Apologies in advance for the messy code!
+
 var FilterList = React.createClass({
     getInitialState: function() {
         var allCompanies = this.props.movies.sort(function(a,b) {
@@ -60,7 +65,7 @@ var FilterList = React.createClass({
             movies: allCompanies
         };
     },
-    alertOption: function(event) {
+    filterCompany: function(event) {
         this.setState({
             filter: event.target.value
         });
@@ -76,7 +81,7 @@ var FilterList = React.createClass({
             <div>
                 <div className="select-box">
                   <span className="title">Company:</span>
-                  <select onChange={this.alertOption}>
+                  <select onChange={this.filterCompany}>
                     <option key="1" value="">All</option>
                     {companyOptions}
                   </select>
@@ -103,7 +108,6 @@ var MovieList = React.createClass({
                 }
             }
         } else {
-            console.log("all");
             movieList = completeList;
         }
         this.setState({
