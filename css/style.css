@@ -1,0 +1,20 @@
+#movie-list {
+  width: 50%;
+}
+
+.select-box {
+  padding-bottom: 14px;
+}
+
+.movies {
+  border-bottom: 1px solid black;
+  padding: 14px 0;
+}
+
+.movies:first-child {
+  border-top: 1px solid black;
+}
+
+.title {
+  font-weight: bold;
+}
